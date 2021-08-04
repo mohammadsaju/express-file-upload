@@ -2,7 +2,7 @@ const express = require('express');
 const multer = require('multer');
 //file upload folder
 const fileUpload = './uploads/';
-//prepare the final upload multer object
+//prepare the final upload multer object//
 var storages = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, fileUpload);
@@ -30,7 +30,6 @@ const app = express();
 app.post('/insert', upload.array('avater', 2), (req, res) => {
     res.send('file is uploaded');
 });
-
 
 //default error handler
 app.use((err, req, res, next) => {
